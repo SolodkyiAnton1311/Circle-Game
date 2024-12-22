@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -9,14 +10,14 @@ public class PlayerMovement : MonoBehaviour, IMove
 {
    [SerializeField] private float maxSpeed, minSpeed, slowdownSpeed;
     private Camera _camera;
-    private List<Vector3> _pathPoints;
+    private Queue<Vector3> _pathPoints;
     [Inject]
     private UIController _uiController;
     private CancellationTokenSource _cts;
     void Start()
     {
         _camera = Camera.main;
-        _pathPoints = new List<Vector3>();
+        _pathPoints = new Queue<Vector3>();
     }
     public async void Move()
     {
@@ -85,9 +86,9 @@ public class PlayerMovement : MonoBehaviour, IMove
     private void AddPoint()
     {
         var worldPosition = InitWay();
-        if (_pathPoints.Count == 0 || Vector3.Distance(worldPosition, _pathPoints[_pathPoints.Count - 1]) > 1f)
+        if (_pathPoints.Count == 0 || Vector3.Distance(worldPosition, _pathPoints.Last()) > 1f)
         {
-            _pathPoints.Add(worldPosition);
+            _pathPoints.Enqueue(worldPosition);
         }
     }
  
