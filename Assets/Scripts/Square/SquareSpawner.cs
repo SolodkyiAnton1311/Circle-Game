@@ -7,7 +7,7 @@ public class SquareSpawner : MonoBehaviour
   [SerializeField] private float _minX,_minY,_maxX,_maxY;
   
   [Inject]
-  private SquareFactory squareFactory;
+  private SquarePool squarePool;
 
   [SerializeField] private int maxSquareCount;
   private void Start()
@@ -17,8 +17,7 @@ public class SquareSpawner : MonoBehaviour
   }
   public void GenerateSquare()
   {
-    var go = squareFactory.Create();
-    go.transform.position = GetRandomPosition();
+    squarePool.Spawn().transform.position = GetRandomPosition();
   }
   private Vector3 GetRandomPosition()
   {
