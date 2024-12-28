@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerModel : MonoBehaviour
+public class PlayerModel : Model
 {
-    // Start is called before the first frame update
-    void Start()
+    private float _maxSpeed, _minSpeed, _slowdownSpeed;
+    public PlayerModel(View view, float maxSpeed, float minSpeed, float slowdownSpeed) : base(view)
     {
-        
+        _maxSpeed = maxSpeed;
+        _minSpeed = minSpeed;
+        _slowdownSpeed = slowdownSpeed;
     }
-
-    // Update is called once per frame
-    void Update()
+    public float maxSpeed
     {
-        
+        get => _maxSpeed;
+    }
+    public float minSpeed
+    {
+        get => _minSpeed;
+    }
+    public float slowdownSpeed
+    {
+        get => _slowdownSpeed;
     }
 }

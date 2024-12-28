@@ -3,7 +3,9 @@ using UnityEngine;
 public class SquareSpawnerManager : MonoBehaviour
 {
     [SerializeField] private SquareSpawnerView view;
+    
     [SerializeField] private float _minX, _minY, _maxX, _maxY;
+   
     [SerializeField] private int _maxSquareCount;
     private SquareController _squareController;
 

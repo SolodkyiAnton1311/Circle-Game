@@ -5,7 +5,6 @@ public class SquarePool : MemoryPool<Square>
     {
         item.gameObject.SetActive(true);
     }
-
     protected override void OnDespawned(Square item)
     {
         item.gameObject.SetActive(false);

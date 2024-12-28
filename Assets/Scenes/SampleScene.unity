@@ -262,8 +262,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 426270600}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        - m_Target: {fileID: 426270605}
+          m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
           m_MethodName: OnPointerDown
           m_Mode: 1
           m_Arguments:
@@ -278,9 +278,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 426270600}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-          m_MethodName: Move
+        - m_Target: {fileID: 426270605}
+          m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
+          m_MethodName: OnPointerUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -294,8 +294,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 426270600}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        - m_Target: {fileID: 426270605}
+          m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
           m_MethodName: OnPointerDrag
           m_Mode: 1
           m_Arguments:
@@ -412,10 +412,11 @@ GameObject:
   m_Component:
   - component: {fileID: 426270599}
   - component: {fileID: 426270598}
-  - component: {fileID: 426270600}
   - component: {fileID: 426270601}
   - component: {fileID: 426270602}
   - component: {fileID: 426270603}
+  - component: {fileID: 426270605}
+  - component: {fileID: 426270604}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -490,21 +491,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &426270600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426270597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b17e7e52460154f93f7ec1b825fb9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 5
-  minSpeed: 2
-  slowdownSpeed: 0.01
 --- !u!114 &426270601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,8 +508,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 426270600}
-          m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        - m_Target: {fileID: 426270605}
+          m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
           m_MethodName: Stop
           m_Mode: 1
           m_Arguments:
@@ -596,6 +582,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &426270604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426270597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe9e5471b4d10d4cb1e24da0df80dfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &426270605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426270597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6765afae258a1548b3faeaa3d019c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 5
+  minSpeed: 2
+  slowdownSpeed: 0.1
+  playerView: {fileID: 426270604}
 --- !u!1 &508066838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,10 +1381,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 1507771556}
-  _minX: -4
-  _minY: -2
-  _maxX: 4
-  _maxY: 2
+  _minX: -8.6
+  _minY: -4.7
+  _maxX: 8.6
+  _maxY: 4.7
   _maxSquareCount: 4
 --- !u!1 &2089702666
 GameObject:

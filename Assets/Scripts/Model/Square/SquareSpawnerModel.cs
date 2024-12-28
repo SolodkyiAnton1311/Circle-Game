@@ -3,36 +3,27 @@ public class SquareSpawnerModel : Model
     private float _minX,_minY,_maxX,_maxY;
     private int _maxSquareCount;
 
-    public float MinX
+    public float minX
     {
         get => _minX;
         set => _minX = value;
     }
-
-    public float MinY
+    public float minY
     {
         get => _minY;
-        set => _minY = value;
     }
-
-    public float MaxX
+    public float maxX
     {
         get => _maxX;
-        set => _maxX = value;
     }
-
-    public float MaxY
+    public float maxY
     {
         get => _maxY;
-        set => _maxY = value;
     }
-
-    public int MaxSquareCount
+    public int maxSquareCount
     {
         get => _maxSquareCount;
-        set => _maxSquareCount = value;
     }
-
     public SquareSpawnerModel(View view, float minX, float minY, float maxX, float maxY, int maxSquareCount) : base(view)
     {
         _minX = minX;

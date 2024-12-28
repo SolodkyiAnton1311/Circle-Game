@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class SquareController : Controller
 { 
     private SquareSpawnerView _view;
@@ -11,7 +10,7 @@ public class SquareController : Controller
     }
     public void GenerateSquares()
     {
-        for (int i = 0; i < _model.MaxSquareCount; i++)
+        for (int i = 0; i < _model.maxSquareCount; i++)
             GenerateSquare();
     }
     public void GenerateSquare()
@@ -20,8 +19,8 @@ public class SquareController : Controller
     }
     private Vector3 GetRandomPosition()
     {
-        var randomX = Random.Range(_model.MinX, _model.MaxX);
-        var randomY = Random.Range(_model.MinY, _model.MaxY);
+        var randomX = Random.Range(_model.minX, _model.maxX);
+        var randomY = Random.Range(_model.minY, _model.maxY);
         return new Vector3(randomX, randomY, 0f);
     }
 }
