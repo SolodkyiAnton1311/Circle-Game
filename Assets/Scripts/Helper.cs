@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Helper 
 {
-    public const string HealthKey = "Health";
+    public const string Score = "Score";
     public const string RangeKey = "Range";
     public static float CalculateDistance(Vector2 a, Vector2 b)
     {
