@@ -3,13 +3,15 @@ using Zenject;
 
 public class CircleSceneInstaller : MonoInstaller
 {
-    [SerializeField] private Square square;
-    [SerializeField] private UIController uiController;
-    [SerializeField] private SquareSpawner squareSpawner;
+    [SerializeField] private Square squarePrefab;
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private SquareSpawnerManager squareSpawnerManager;
+
+
     public override void InstallBindings()
     {
-        Container.BindMemoryPool<Square,SquarePool>().FromComponentInNewPrefab(square);
-        Container.Bind<UIController>().FromInstance(uiController).AsSingle();
-        Container.Bind<SquareSpawner>().FromInstance(squareSpawner).AsSingle();
+        Container.Bind<UIManager>().FromInstance(uiManager).AsSingle();
+        Container.Bind<SquareSpawnerManager>().FromInstance(squareSpawnerManager).AsSingle();
+        Container.BindMemoryPool<Square, SquarePool>().FromComponentInNewPrefab(squarePrefab);
     }
 }

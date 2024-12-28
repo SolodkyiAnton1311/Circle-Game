@@ -151,9 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf007be71f559a4eb54fb280fd52aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 2260181130371921517, guid: aa995799032789347a550da2692a8966, type: 3}
-  uiController: {fileID: 508066843}
-  squareSpawner: {fileID: 1507771556}
+  squarePrefab: {fileID: 2260181130371921517, guid: aa995799032789347a550da2692a8966, type: 3}
+  uiManager: {fileID: 508066844}
+  squareSpawnerManager: {fileID: 1507771557}
 --- !u!4 &149145624
 Transform:
   m_ObjectHideFlags: 0
@@ -609,6 +609,7 @@ GameObject:
   - component: {fileID: 508066840}
   - component: {fileID: 508066839}
   - component: {fileID: 508066843}
+  - component: {fileID: 508066844}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -714,10 +715,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1491372251}
   rangeText: {fileID: 2089702668}
-  scoreInvoker:
-    value: 0
-  rangeInvoker:
-    value: 0
+--- !u!114 &508066844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508066838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb26bb121697624da565eddc45667a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 508066843}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507771555}
   - component: {fileID: 1507771556}
+  - component: {fileID: 1507771557}
   m_Layer: 0
   m_Name: SquareSpawner
   m_TagString: Untagged
@@ -1343,11 +1354,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674b677a61723d84aa47e8066d8d056b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minX: -8.5
-  _minY: -4.6
-  _maxX: 8.5
-  _maxY: 4.6
-  maxSquareCount: 4
+--- !u!114 &1507771557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507771554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf98b649552b75d438f72bc6146c9047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 1507771556}
+  _minX: -4
+  _minY: -2
+  _maxX: 4
+  _maxY: 2
+  _maxSquareCount: 4
 --- !u!1 &2089702666
 GameObject:
   m_ObjectHideFlags: 0

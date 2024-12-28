@@ -6,13 +6,13 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
-public class PlayerMovement : MonoBehaviour, IMove
+public class PlayerMovement : MonoBehaviour
 {
    [SerializeField] private float maxSpeed, minSpeed, slowdownSpeed;
     private Camera _camera;
     private Queue<Vector3> _pathPoints;
     [Inject]
-    private UIController _uiController;
+    private UIManager _uiManager;
     private CancellationTokenSource _cts;
     void Start()
     {
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour, IMove
     private void Step(Vector3 target, float speed)
     {
         Vector3 direction = (target - transform.position).normalized;
-        _uiController.rangeInvoker.Value += Helper.CalculateDistance(target, transform.position);
+        _uiManager.UIController.AddRange(Helper.CalculateDistance(target, transform.position));
         transform.position += direction * speed * Time.deltaTime;
         
     }

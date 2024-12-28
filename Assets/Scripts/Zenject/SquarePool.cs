@@ -1,5 +1,5 @@
 using Zenject;
-public class SquarePool: MemoryPool<Square>
+public class SquarePool : MemoryPool<Square>
 {
     protected override void OnSpawned(Square item)
     {
